@@ -11,6 +11,7 @@ includes:
   branch: ./.tasks/{{OS}}/branching.yml
   tag: ./.tasks/{{OS}}/tags.yml
   val: ./.tasks/{{OS}}/validate.yml
+  docs: ./.tasks/{{OS}}/docs.yml
   
 
 tasks:
@@ -23,7 +24,9 @@ tasks:
       - task: val:dlFile
         vars: {IN: "https://raw.githubusercontent.com/krakentech/kt_project_tools/1.0.0/githooks/prepare-commit-msg", OUT: "./.git/hooks/prepare-commit-msg", ERR: "Unable to download the commit hook file"}
       - cmd: chmod +x "./.git/hooks/prepare-commit-msg"
+      - task: docs:prepare
       - cmd: echo "Setup Compelete"
+    
     silent: true
 
   validate:

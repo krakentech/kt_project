@@ -1,0 +1,23 @@
+# https://taskfile.dev
+version: '3'
+
+
+tasks:
+  launch:
+    desc: Open the current state of docs locally just as if in production
+    dir: docs
+    cmds:
+      - hugo serve
+    silent: true
+
+  preview:
+    desc: Open the crrent state in developer mode
+    dir: docs
+    cmds:
+      - hugo serve
+    silent: true
+
+  prepare:
+    cmds:
+      - git submodule init && git submodule update
+  
