@@ -7,6 +7,7 @@ tasks:
     desc: Open the current state of docs locally just as if in production
     dir: docs
     cmds:
+      - open http://localhost:1313
       - hugo serve
     silent: true
 
@@ -14,7 +15,8 @@ tasks:
     desc: Open the crrent state in developer mode
     dir: docs
     cmds:
-      - hugo serve
+      - open http://localhost:1313
+      - hugo serve -D
     silent: true
 
   prepare:
